@@ -1,0 +1,127 @@
+body {
+	margin: 15px;
+	font-family: "samsungoneuilatin400";
+	color: #333;
+}
+
+@font-face {
+	font-family: "samsungoneuilatin400";
+	src: url(../fonts/samsungoneuilatin400.woff);
+}
+
+@font-face {
+	font-family: "samsungoneuilatin700";
+	src: url(../fonts/samsungoneuilatin700.woff);
+}
+
+@font-face {
+	font-family: "SamsungSharpSans-Bold";
+	src: url(../fonts/SamsungSharpSans-Bold.woff);
+}
+
+input {
+	font-family: "samsungoneuilatin400";
+	box-shadow: none;
+	display: inline-block;
+	text-align: start;
+}
+input:focus {
+	outline: 0;
+	box-shadow: 0 0 2px rgba(0,0,0,0.2);
+	border: 1px solid #bebebe;
+}
+
+#b-films {
+	margin: 0 auto;
+	text-align: center;
+}
+@media screen and (min-width: 640px) {
+	#b-films {
+		max-width: 750px;
+		margin: 0 auto;
+		text-align: left;
+	}
+}
+.m-typo.m-typo_primary {
+	font-weight: 400;
+	font-stretch: normal;
+	font-size: 40px;
+	line-height: 52px;
+	font-family: "SamsungSharpSans-Bold";
+	margin: 50px 0 40px 0;
+	color: #333;
+}
+@media screen and (min-width: 640px) {
+	.m-typo.m-typo_primary {
+		text-align: left;
+		margin: 60px 0 40px 20px;
+	}
+}
+.m-typo.m-typo_text {
+	text-align: left;
+	font-family: "samsungoneuilatin400";
+	font-size: 16px;
+	line-height: 26px;
+}
+.m-btn {
+	display: inline-block;
+	vertical-align: middle;
+	zoom: 1;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	padding: 7px 70px;
+	font-family: "samsungoneuilatin700";
+	font-size: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	border-radius: 20px;
+	margin-top: 40px;
+}
+.m-btn.m-btn_secondary {
+	margin-left: 0px;
+	height: 42px;
+	color: #333;
+	background: transparent;
+	border: 2px solid #333;
+}
+.m-btn.m-btn_secondary:hover {
+	color: #fff;
+	background: #333;
+	border: 2px solid #333;
+}
+@media screen and (min-width: 640px) {
+	.m-btn.m-btn_secondary {
+		margin-left: 20px;
+	}
+}
+@media screen and (min-width: 640px) {
+.b-films_outputs {
+	margin-left: 20px;
+}
+}
+.m-form {
+	font-size: 16px;
+	line-height: normal;
+	height: 50px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 15px;
+	color: #444;
+	background: #fff;
+	border: 1px solid #bebebe;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+@media screen and (min-width: 640px) {
+	.m-form {
+		display: inline-block;
+		width: calc(50% - 42px);
+		margin: 0 16px 10px 21px;
+	}
+}
+#ui-id-1,
+#ui-id-2 {
+	background-color: white;
+}

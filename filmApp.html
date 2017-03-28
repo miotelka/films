@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Filmy</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+	<script src="https://unpkg.com/vue@2.2.1"></script> 
+	<script src='https://code.jquery.com/jquery-2.2.4.js'></script>
+	<script src='https://code.jquery.com/ui/1.12.0/jquery-ui.js'></script>
+	
+</head>
+<body>
+
+<div id="b-films">
+	<h1 class="m-typo m-typo_primary">Compare Movies</h1>
+	<input type="text" class="m-form" placeholder="Film One" v-model="filmOne" id="idk">
+	<input type="text" class="m-form" placeholder="Film Two" v-model="filmTwo" id="idk2">
+	<div class="b-films_outputs">
+		<div v-if="filmOut.length > 0">
+			<span class="m-typo m-typo_text">{{ filmOut }}</span>
+		</div>
+		<div v-if="actors.length > 0">
+				<br/>
+				<span class="m-typo m-typo_text">{{ actors }}</span>
+		</div>
+		<div v-if="directors.length > 0">
+				<br/>
+				<span class="m-typo m-typo_text">{{ directors }}</span>
+		</div>
+	</div>
+	<button class="m-btn m-btn_secondary" id="submit" @click="search">Compare</button>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
