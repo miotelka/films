@@ -4,12 +4,14 @@ var app = new Vue({
 	el: '#b-films',
 
 	data: {
+		sURL: 'http://www.omdbapi.com/?s=',
 		baseURL: 'http://www.omdbapi.com/?t=',
 		filmOne: '',
 		filmTwo: '',
 		filmOut: '',
 		actors: '',
-		directors: ''
+		directors: '',
+		film: null
 	},
 	methods: {
 		search: function() {
@@ -120,56 +122,21 @@ var app = new Vue({
 						console.log(error)
  						vm.filmOut = 'Sorry, an error has occurred'
 					});
+		},
+		findTitles: function() {
+			console.log('running findTitles')
+			var vm = this
+			this.film = null
+			axios.get(this.sURL + this.filmOne)
+			.then(function(response) {
+				vm.film = response.data
+			})
+		},
+		showFilm: function () {
+			this.findTitles()
 		}
+	},
+	mounted: function () {
+		this.findTitles()
 	}
-});
-
-
-$(document).ready(function(){
-	$("#idk").autocomplete({
-		source: function (request, response) {
-			$.ajax({
-				method: "GET",
-				dataType: "json",
-				url: "http://www.omdbapi.com/?s="+request.term,
-				success: function (data) {
-					console.log(data);
-					var transformed = $.map(data.Search, function (el) {
-						return {
-							label: el.Title,
-							id: el.Years
-						};
-					});
-					response(transformed);
-					console.log(arguments);
-				},
-				error: function () {
-					response([]);
-				}	
-			});
-		}
-	});
-
-	$("#idk2").autocomplete({
-		source: function (request, response) {
-			$.ajax({
-				method: "GET",
-				dataType: "json",
-				url: "http://www.omdbapi.com/?s="+request.term,
-				success: function (data) {
-					console.log(data);
-					var transformed = $.map(data.Search, function (el) {
-						return {
-							label: el.Title,
-							id: el.Years
-						};
-					});
-					response(transformed);
-				},
-				error: function () {
-					response([]);
-				}
-			});
-		}
-	});
 });

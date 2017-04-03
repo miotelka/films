@@ -17,8 +17,8 @@
 
 <div id="b-films">
 	<h1 class="m-typo m-typo_primary">Compare Movies</h1>
-	<input type="text" class="m-form" placeholder="Film One" v-model="filmOne" id="idk">
-	<input type="text" class="m-form" placeholder="Film Two" v-model="filmTwo" id="idk2">
+	<input type="text" class="m-form" placeholder="Film One" v-model="filmOne" id="idk" v-on:blur="showFilm">
+	<input type="text" class="m-form" placeholder="Film Two" v-model="filmTwo" id="idk2" v-on:blur="showFilm">
 	<div class="b-films_outputs">
 		<div v-if="filmOut.length > 0">
 			<span class="m-typo m-typo_text">{{ filmOut }}</span>
@@ -33,6 +33,14 @@
 		</div>
 	</div>
 	<button class="m-btn m-btn_secondary" id="submit" @click="search">Compare</button>
+	<img
+        src="http://ispot.pl/temp/lp/loader_big.gif"
+        style="width: 32px;"
+        v-if="!film"
+	>
+	<ul v-if="film">
+		<li v-for="thing in film.Search">{{ thing.Title }} </li>
+	</ul>
 </div>
 
 
